@@ -15,7 +15,6 @@ namespace CheckMaximum
             var ActualResult = check.CheckIntMax(A, B, C);
             Assert.AreEqual(A, ActualResult);
 
-
         }
         [Test]
         public void GivenMaxInSecondPosition_CheckMaxNumber_ReturnMaxInsecondPosition()
@@ -29,7 +28,7 @@ namespace CheckMaximum
 
         }
         [Test]
-        public void GivenMaxInThirsPosition_CheckMaxNumber_ReturnMaxInThirdPosition()
+        public void GivenMaxInThirdPosition_CheckMaxNumber_ReturnMaxInThirdPosition()
         {
 
             int A = 9, B = 5, C = 10;
@@ -59,7 +58,7 @@ namespace CheckMaximum
 
         }
         [Test]
-        public void GivenFloatMaxInThirsPosition_CheckMaxNumber_ReturnMaxInThirdPosition()
+        public void GivenFloatMaxInThirdPosition_CheckMaxNumber_ReturnMaxInThirdPosition()
         {
 
             float A = 9.0f, B = 5.25f, C = 10.3f;
@@ -67,6 +66,34 @@ namespace CheckMaximum
             var ActualResult = check.CheckFloatMax(A, B, C);
             Assert.AreEqual(C, ActualResult);
 
+        }
+        [Test]
+        public void GivenStringMaxInFirstPosition_CheckMaxNumber_ReturnMaxInFirstPosition()
+        {
+
+            string A = "rejeesh", B = "Bharathan", C = "Hemanth";
+            MaximumNumber.CheckMaximumOfThree check = new MaximumNumber.CheckMaximumOfThree();
+            var ActualResult = check.CheckStringMax(A, B, C);
+            Assert.AreEqual(A, ActualResult);
+
+        }
+        [Test]
+        public void GivenStringMaxInSecondPosition_CheckMaxNumber_ReturnMaxInsecondPosition()
+        {
+            string A = "Hemanth", B = "vysagh", C = "Bharathan";
+            MaximumNumber.CheckMaximumOfThree check = new MaximumNumber.CheckMaximumOfThree();
+            var ActualResult = check.CheckStringMax(A, B, C);
+            Assert.AreEqual(B, ActualResult);
+            
+
+        }
+        [Test]
+        public void GivenStringMaxInThirdPosition_CheckMaxNumber_ReturnMaxInThirdPosition()
+        {
+            string A = "Hemanth", B = "Asha", C = "Vysagh";
+            MaximumNumber.CheckMaximumOfThree check = new MaximumNumber.CheckMaximumOfThree();
+            var ActualResult = check.CheckStringMax(A, B, C);
+            Assert.AreEqual(C, ActualResult);
         }
     }
 }
