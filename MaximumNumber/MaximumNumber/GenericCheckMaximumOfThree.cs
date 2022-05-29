@@ -8,34 +8,29 @@ namespace MaximumNumber
 {
     public class GenericCheckMaximumOfThree<T> where T:IComparable 
     {
-        public T first, second, third;
+        public T[] checkMaxArray;
 
-        public GenericCheckMaximumOfThree(T first, T second, T third)
+        public GenericCheckMaximumOfThree(T[] valueArray)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+        this.checkMaxArray = valueArray;
         }
 
-        public static T CheckMaximum(T first, T second,T third)
+        public T[] SortArray(T[] values)
         {
-            if(first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                return first;
-            }
-            else if (second.CompareTo(first) > 0 && second.CompareTo(first) > 0)
-            {
-                return second;
-            }
-            else
-            {
-                return third;
-            }
+            Array.Sort(values);
+            return values;
+        }
+
+        public T CheckMax(T[] maxArray)
+        {
+            var values = SortArray(maxArray);
+            return values[values.Length - 1];
+
         }
 
         public T CheckMaximum()
         {
-            T value = GenericCheckMaximumOfThree<T>.CheckMaximum(this.first, this.second, this.third);
+            T value = CheckMax(this.checkMaxArray);
             return value;
         }
         
