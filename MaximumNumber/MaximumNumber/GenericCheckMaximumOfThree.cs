@@ -31,7 +31,13 @@ namespace MaximumNumber
         public T CheckMaximum()
         {
             T value = CheckMax(this.checkMaxArray);
+            PrintMax(value);
             return value;
+        }
+
+        public void PrintMax(T value)
+        {
+            Console.WriteLine("Maximum value is ---> "+value);
         }
         
     }
